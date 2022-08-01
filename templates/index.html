@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link href="{{ url_for('static', filename='css/Pacifico.css') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ url_for('static', filename='css/Arimo.css') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ url_for('static', filename='css/Hind.css') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ url_for('static', filename='css/Condensed.css') }}" rel='stylesheet' type='text/css'>
+    <link href="{{ url_for('static', filename='css/OpenSans.css') }}" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+  
+</head>
+    <body>
+        <div class="login">
+            <h1>在下方画一个数字</h1>
+            <!-- Main Input For Receiving Query to our ML -->
+            <canvas id="canvas" name="user_drawn" width="560" height="560"></canvas>
+            <button id="redraw" class="btn btn-primary btn-block btn-large">重画</button>
+            <button id="predict" class="btn btn-primary btn-block btn-large">预测</button>
+            <br><br>
+            <div id="result">{{ prediction_text }}</dv>
+        </div>
+        
+        <form method="post" accept-charset="utf-8" name="hidden_form">
+            <input name="data" id='data' type="hidden"/>
+        </form>
+
+    <script src="../static/js/canvas.js"></script>
+    </body>
+</html>
